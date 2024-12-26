@@ -4,20 +4,16 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     
-    nix-darwin = {
-      url = "github:LnL7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
         
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
-    # home-manager = {
-    #   url = "github:nix-community/home-manager";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-darwin, nix-homebrew }:
+  outputs = inputs@{ self, nixpkgs, nix-darwin, nix-homebrew, home-manager }:
   let
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -29,11 +25,9 @@
           pkgs.gh
           pkgs.git
           pkgs.vim
-          pkgs.vscode
           pkgs.zoxide
         ];
       
-
       programs.zsh.enable = true;  # Enable zsh module
       environment.shells = [ pkgs.zsh ];  # Add zsh to allowed shells
 
@@ -64,7 +58,6 @@
         ];
       };
 
-
       nixpkgs.config.allowUnfree = true; 
 
       # Set hostname
@@ -94,7 +87,10 @@
     # $ darwin-rebuild build --flake .#Zs-MacBook-Pro
     darwinConfigurations."z" = nix-darwin.lib.darwinSystem {
       modules = [ 
-        configuration 
+        configuration
+        {
+          users.users.z.home = "/Users/z";
+        }
         nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
@@ -110,6 +106,15 @@
               # Automatically migrate existing Homebrew installations
               autoMigrate = true;
             };
+          }
+        home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.z = import ./home.nix;
+
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # arguments to home.nix
           }
       ];
     };
