@@ -18,4 +18,37 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.git = {
+    enable = true;
+
+    userName = "Jianzu Guan";
+    userEmail = "git@jzg.fastmail.com";
+
+    aliases = {
+      a = "add";
+      b = "branch";
+      c = "checkout";
+      s = "status";
+    };
+
+    extraConfig = {
+      core = {
+        excludesFile = "$HOME/.config/git/ignore";
+      };
+      
+      init = {
+        defaultBranch = "main";
+      };
+      
+      pull = {
+        rebase = true;
+      };
+      
+      push = {
+        default = "simple";
+        autoSetupRemote = true;
+      };
+    };
+  };
 }

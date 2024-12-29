@@ -16,6 +16,37 @@
   outputs = inputs@{ self, nixpkgs, nix-darwin, nix-homebrew, home-manager }:
   let
     configuration = { pkgs, ... }: {
+      # Set hostname
+      # networking.hostName = "Zs-MacBook-Pro";
+      # This will set both the device name and local hostname
+      
+      # Necessary for using flakes on this system.
+      nix.settings.experimental-features = "nix-command flakes";
+
+      # Set Git commit hash for darwin-version.
+      system.configurationRevision = self.rev or self.dirtyRev or null;
+
+      # Used for backwards compatibility, please read the changelog before changing.
+      # $ darwin-rebuild changelog
+      system.stateVersion = 5;
+
+      # The platform the configuration will be used on.
+      nixpkgs.hostPlatform = "aarch64-darwin";
+      #packages.aarch64-darwin.darwinConfigurations.z.system
+
+      nixpkgs.config.allowUnfree = true;
+
+      system.defaults = {
+        dock.autohide = true;
+      };
+
+      security.pam.enableSudoTouchIdAuth = true;
+
+      # Enable alternative shell support in nix-darwin.
+      # programs.fish.enable = true;
+      programs.zsh.enable = true;  # Enable zsh module
+      environment.shells = [ pkgs.zsh ];  # Add zsh to allowed shells
+
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
@@ -28,9 +59,6 @@
           pkgs.zoxide
         ];
       
-      programs.zsh.enable = true;  # Enable zsh module
-      environment.shells = [ pkgs.zsh ];  # Add zsh to allowed shells
-
       homebrew = {
         enable = true;
         onActivation = {
@@ -41,6 +69,7 @@
         
         # CLI packages
         brews = [
+          "stow"
           "tfenv"
         ];
 
@@ -57,35 +86,12 @@
           "visual-studio-code"
         ];
       };
-
-      nixpkgs.config.allowUnfree = true; 
-
-      # Set hostname
-      # networking.hostName = "Zs-MacBook-Pro";
-      # This will set both the device name and local hostname
-      
-      # Necessary for using flakes on this system.
-      nix.settings.experimental-features = "nix-command flakes";
-
-      # Enable alternative shell support in nix-darwin.
-      # programs.fish.enable = true;
-
-      # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
-
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
-      system.stateVersion = 5;
-
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "aarch64-darwin";
-      #packages.aarch64-darwin.darwinConfigurations.z.system
     };
   in
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#Zs-MacBook-Pro
-    darwinConfigurations."z" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."kaluza-mbp" = nix-darwin.lib.darwinSystem {
       modules = [ 
         configuration
         {
