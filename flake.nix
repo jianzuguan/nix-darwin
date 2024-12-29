@@ -38,6 +38,8 @@
 
       system.defaults = {
         dock.autohide = true;
+        finder.AppleShowAllExtensions = true;
+        finder.FXPreferredViewStyle = "clmv";
       };
 
       security.pam.enableSudoTouchIdAuth = true;
@@ -85,6 +87,10 @@
           "stats"
           "visual-studio-code"
         ];
+
+        masApps = {
+          "whatsapp-messenger" = 310633997;
+        };
       };
     };
   in
