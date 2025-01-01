@@ -8,9 +8,6 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
         
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, nix-homebrew, home-manager }:
@@ -118,15 +115,6 @@
               # Automatically migrate existing Homebrew installations
               autoMigrate = true;
             };
-          }
-        home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.z = import ./home.nix;
-
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
           }
       ];
     };
