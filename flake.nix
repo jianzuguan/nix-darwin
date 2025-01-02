@@ -37,6 +37,8 @@
         dock.autohide = true;
         finder.AppleShowAllExtensions = true;
         finder.FXPreferredViewStyle = "clmv";
+        finder.ShowPathbar = true;
+        finder.ShowStatusBar = true;
       };
 
       security.pam.enableSudoTouchIdAuth = true;
@@ -78,7 +80,6 @@
         casks = [
           "alt-tab"
           "arc"
-          "bitwarden"
           "grammarly-desktop"
           "logi-options+"
           "obsidian"
@@ -88,6 +89,7 @@
         ];
 
         masApps = {
+          "bitwarden" = 1352778147;
           "whatsapp-messenger" = 310633997;
         };
       };
