@@ -80,6 +80,7 @@
         casks = [
           "alt-tab"
           "arc"
+          "beekeeper-studio"
           "grammarly-desktop"
           "logi-options+"
           "obsidian"
