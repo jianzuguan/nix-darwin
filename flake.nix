@@ -140,6 +140,7 @@
           "logi-options+"
           "obsidian"
           "ollama"
+          "slack"
           "stats"
           "visual-studio-code"
         ];
