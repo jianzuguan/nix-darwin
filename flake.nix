@@ -34,11 +34,27 @@
       nixpkgs.config.allowUnfree = true;
 
       system.defaults = {
-        dock.autohide = true;
-        finder.AppleShowAllExtensions = true;
-        finder.FXPreferredViewStyle = "clmv";
-        finder.ShowPathbar = true;
-        finder.ShowStatusBar = true;
+        dock = {
+          autohide = true;
+          persistent-apps = [
+            "/System/Applications/LaunchPad.app"
+            "/Applications/Self-Service.app"
+            "/Applications/Bitwarden.app"
+            "/Applications/1Password.app"
+            "/Applications/Obsidian.app"
+            "/Applications/Slack.app"
+            "/Applications/Arc.app"
+            "/System/Applications/Utilities/Terminal.app"
+            "/Applications/Visual Studio Code.app"
+          ];
+        };
+
+        finder = {
+          AppleShowAllExtensions = true;
+          FXPreferredViewStyle = "clmv";
+          ShowPathbar = true;
+          ShowStatusBar = true;
+        };
 
         # customize trackpad
         trackpad = {
