@@ -7,6 +7,10 @@
       pkgs.fnm
       pkgs.gh
       pkgs.git
+      pkgs.kind
+      pkgs.kubectl
+      pkgs.kubectx
+      pkgs.kubernetes-helm
       pkgs.jq
       pkgs.vim
       pkgs.zoxide
