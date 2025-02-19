@@ -13,7 +13,7 @@
       pkgs.kubernetes-helm
       pkgs.jq
       pkgs.vim
+      pkgs.yarn-berry
       pkgs.zoxide
     ];
-  
 }
