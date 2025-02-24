@@ -7,11 +7,12 @@
       pkgs.fnm
       pkgs.gh
       pkgs.git
+      pkgs.jq
       pkgs.kind
       pkgs.kubectl
       pkgs.kubectx
       pkgs.kubernetes-helm
-      pkgs.jq
+      pkgs.temporal-cli
       pkgs.vim
       pkgs.yarn-berry
       pkgs.zoxide
