@@ -3,6 +3,7 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages =
     [
+      pkgs.act
       pkgs.coreutils
       pkgs.fnm
       pkgs.gh
