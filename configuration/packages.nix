@@ -12,6 +12,7 @@
       pkgs.kind
       pkgs.kubectl
       pkgs.kubectx
+      pkgs.kubelogin-oidc
       pkgs.kubernetes-helm
       pkgs.temporal-cli
       pkgs.vim
