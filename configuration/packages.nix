@@ -4,6 +4,7 @@
   environment.systemPackages =
     [
       pkgs.act
+      pkgs.corepack
       pkgs.coreutils
       pkgs.fnm
       pkgs.gh
@@ -16,7 +17,6 @@
       pkgs.kubernetes-helm
       pkgs.temporal-cli
       pkgs.vim
-      pkgs.yarn-berry
       pkgs.zoxide
     ];
 }
