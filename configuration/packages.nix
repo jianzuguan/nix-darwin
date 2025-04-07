@@ -9,6 +9,7 @@
       pkgs.fnm
       pkgs.gh
       pkgs.git
+      pkgs.graphite-cli
       pkgs.jq
       pkgs.kind
       pkgs.kubectl
