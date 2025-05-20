@@ -7,6 +7,7 @@
       pkgs.corepack
       pkgs.coreutils
       pkgs.fnm
+      pkgs.fzf
       pkgs.gh
       pkgs.git
       pkgs.graphite-cli
