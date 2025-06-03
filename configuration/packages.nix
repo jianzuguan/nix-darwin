@@ -17,6 +17,7 @@
       pkgs.kubectx
       pkgs.kubelogin-oidc
       pkgs.kubernetes-helm
+      pkgs.sbt
       pkgs.sqlite
       pkgs.temporal-cli
       pkgs.vim
