@@ -11,6 +11,7 @@
       pkgs.gh
       pkgs.git
       pkgs.graphite-cli
+      pkgs.jdk21_headless
       pkgs.jq
       pkgs.kind
       pkgs.kubectl
