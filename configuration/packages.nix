@@ -18,6 +18,7 @@
       pkgs.kubectx
       pkgs.kubelogin-oidc
       pkgs.kubernetes-helm
+      pkgs.nh
       pkgs.sbt
       pkgs.sqlite
       pkgs.temporal-cli
