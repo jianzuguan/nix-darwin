@@ -21,6 +21,7 @@
       "beekeeper-studio"
       "brave-browser"
       "grammarly-desktop"
+      "localsend"
       "logi-options+"
       "obsidian"
       "ollama"
