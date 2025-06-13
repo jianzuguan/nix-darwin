@@ -5,6 +5,8 @@
     touchIdAuth = true;
   };
 
+  system.primaryUser = "z"; 
+
   system.defaults = {
     dock = {
       autohide = true;
