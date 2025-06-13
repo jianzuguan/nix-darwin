@@ -19,6 +19,7 @@
       "alt-tab"
       "arc"
       "beekeeper-studio"
+      "brave-browser"
       "grammarly-desktop"
       "logi-options+"
       "obsidian"
