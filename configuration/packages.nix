@@ -24,6 +24,7 @@
       pkgs.sqlite
       pkgs.temporal-cli
       pkgs.vim
+      pkgs.yq-go
       pkgs.zoxide
     ];
 }
