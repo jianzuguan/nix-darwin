@@ -17,9 +17,11 @@
         "/Applications/1Password.app"
         "/Applications/Obsidian.app"
         "/Applications/Slack.app"
-        "/Applications/Arc.app"
+        "/Applications/Brave Browser.app"
         "/System/Applications/Utilities/Terminal.app"
         "/Applications/Visual Studio Code.app"
+        "/Applications/Docker.app"
+        "/Applications/Postman.app"
       ];
     };
 
