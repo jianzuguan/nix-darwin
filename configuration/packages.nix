@@ -4,7 +4,6 @@
   environment.systemPackages =
     [
       pkgs.act
-      pkgs.corepack
       pkgs.coreutils
       pkgs.fnm
       pkgs.fzf
