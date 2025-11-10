@@ -5,7 +5,7 @@
     [
       pkgs.act
       pkgs.coreutils
-      pkgs.fnm
+      # pkgs.fnm
       pkgs.fzf
       pkgs.gh
       pkgs.git

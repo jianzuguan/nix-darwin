@@ -10,6 +10,7 @@
     # CLI packages
     brews = [
       "awscli"
+      "fnm"
       "stow"
       "tfenv"
     ];
