@@ -5,7 +5,6 @@
     [
       pkgs.act
       pkgs.coreutils
-      # pkgs.fnm
       pkgs.fzf
       pkgs.gh
       pkgs.git
@@ -18,6 +17,7 @@
       pkgs.kubelogin-oidc
       pkgs.kubernetes-helm
       pkgs.kubeseal
+      pkgs.lens
       pkgs.nh
       pkgs.sbt
       pkgs.sqlite
