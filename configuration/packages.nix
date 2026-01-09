@@ -18,6 +18,7 @@
       pkgs.kubernetes-helm
       pkgs.kubeseal
       pkgs.lens
+      pkgs.mpv
       pkgs.nh
       pkgs.sbt
       pkgs.sqlite
